@@ -8,7 +8,12 @@
             Inquire about website development services.
         </p>
       </div>
-      <form method="post" action="https://formspree.io/f/xzbokkqo">
+      <!--
+        Since we post to a remote client, it may be advantageous to implement
+        a "circuit breaker" pattern, w/ fallback options to assure messages
+        are delivered, even when the remote client is down.
+      -->
+      <form method="post" action="https://blazed.sbs/cms/submit/contact">
         <div class="flex flex-wrap -m-2">
           <div class="p-2 w-1/2">
             <div class="relative">
@@ -28,11 +33,35 @@
           </div>
           <div class="p-2 w-full">
             <div class="relative">
+              <label for="platform" class="leading-7 text-sm text-gray-600">
+                  Target Platform
+              </label>
+              <select id="platform" name="platform" class="w-full bg-gray-100 bg-opacity-50 mt-1 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-3 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+                  <option value="no-framework">
+                    No Framework
+                  </option>
+                  <option value="angular">
+                    Angular
+                  </option>
+                  <option value="react">
+                    React
+                  </option>
+                  <option value="other">
+                    Other
+                  </option>
+                </select>
+            </div>
+          </div>
+          <div class="p-2 w-full">
+            <div class="relative">
               <label for="message" class="leading-7 text-sm text-gray-600">
                   Message
               </label>
               <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out" required></textarea>
             </div>
+          </div>
+          <div>
+            <input type="hidden" name="type" value="website" />
           </div>
           <div class="p-2 w-full">
             <input type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" value="Send">
