@@ -8,12 +8,7 @@
             Inquire about website development services.
         </p>
       </div>
-      <!--
-        Since we post to a remote client, it may be advantageous to implement
-        a "circuit breaker" pattern, w/ fallback options to assure messages
-        are delivered, even when the remote client is down.
-      -->
-      <form method="post" action="https://blazed.sbs/cms/submit/contact">
+      <form method="post" action="https://api.staticforms.xyz/submit">
         <div class="flex flex-wrap -m-2">
           <div class="p-2 w-1/2">
             <div class="relative">
@@ -62,6 +57,13 @@
           </div>
           <div>
             <input type="hidden" name="type" value="website" />
+          </div>
+          <div>
+            <input type="text" name="honeypot" style="display:none">
+            <input type="hidden" name="accessKey" value="ae7d37b2-fcad-42f6-a26f-d9d805abfb04">
+            <input type="hidden" name="subject" value="New website inquiry Message from Blazed Contact" />
+            <input type="hidden" name="replyTo" value="@">
+            <input type="hidden" name="redirectTo" value="https://blazed.contact/success">
           </div>
           <div class="p-2 w-full">
             <input type="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" value="Send">
