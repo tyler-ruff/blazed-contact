@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app-contact/app.component';
-import { HomeComponent } from './home/home.component';
-import { SuccessComponent } from './success/success.component';
-import { UnknownComponent } from './unknown/unknown.component';
-import { WebsiteComponent } from './website/website.component';
+import { AppComponent } from './pages/app-contact/app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SuccessComponent } from './pages/success/success.component';
+import { UnknownComponent } from './pages/unknown/unknown.component';
+import { WebsiteComponent } from './pages/website/website.component';
 
 const routes: Routes = [
   { path: 'success', component: SuccessComponent },
