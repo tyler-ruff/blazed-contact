@@ -5,16 +5,45 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HeaderComponent } from './components/footer/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+
+// Services
+import { AppService } from './shared/app.service';
+
+// Pages
+import { HomeComponent } from './pages/home/home.component';
+import { AppContactComponent } from './pages/app-contact/app.component';
+import { WebsiteComponent } from './pages/website/website.component';
+import { UnknownComponent } from './pages/unknown/unknown.component';
 import { SuccessComponent } from './pages/success/success.component';
+
+// Components
+import { LayoutComponent } from './components/layout/layout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavComponent } from './components/nav/nav.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+// Widgets
+
+// Utilities
+import { LazyLoadDirective } from './utils/lazyload.directive';
+import { PhoneFormatPipe } from './utils/format-phone.pipe';
+import { RelativeTimePipe } from './utils/relative-time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
     HeaderComponent,
+    NavComponent,
     FooterComponent,
-    SuccessComponent
+    HomeComponent,
+    AppContactComponent,
+    WebsiteComponent,
+    UnknownComponent,
+    SuccessComponent,
+    LazyLoadDirective,
+    PhoneFormatPipe,
+    RelativeTimePipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +55,9 @@ import { SuccessComponent } from './pages/success/success.component';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
