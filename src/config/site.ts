@@ -1,4 +1,4 @@
-import { Layout, FooterLink } from 'fire-ng/lib/interfaces/layout';
+import { Layout } from 'fire-ng/lib/interfaces/layout';
 
 export const site = {
     logo: "https://blazed.sirv.com/logo/Beaker-Dark.png",
