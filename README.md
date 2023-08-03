@@ -1,7 +1,5 @@
 # Blazed Contact
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/aab79398-3282-4561-82ca-e1c9b92b1648/deploy-status)](https://app.netlify.com/sites/blazed-contact/deploys)
-
 Contact us website.
 
 - [Visit Website](https://blazed.contact/)
