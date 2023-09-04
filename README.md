@@ -18,7 +18,6 @@ Blazed Contact is a contact-us website for Blazed Labs. On this site, you can in
 - Design, Project Advising: [Matthew Ruff](https://github.com/matt-ruff)
 
 ## Special Thanks
-- [Fire Angular](https://github.com/blazed-space/fire-angular)
-- [AngularJS](https://angular.io/)
+- [Nuxt](https://nuxt.com/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [Netlify](https://netlify.com/)
+- [Vercel](https://vercel.com/)
