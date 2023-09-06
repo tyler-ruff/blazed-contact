@@ -1,13 +1,15 @@
 <script setup>
     import { siteConfig } from '@/config/site';
     import { navMenu } from '@/config/menu';
+
+    const route = useRoute();
 </script>
 <template>
     <nav aria-label="Main Menu" v-bind:id="navMenu._id" class="bg-white">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="flex-1 md:flex md:items-center md:gap-12">
-            <a class="block hover:opacity-75" v-bind:title="siteConfig.name" href="/">
+            <a class="block hover:opacity-75 pt-1" v-bind:title="siteConfig.name" href="/">
               <span class="sr-only">Home</span>
               <Logo />
             </a>
@@ -16,9 +18,9 @@
             <div class="hidden md:block">
               <ul class="flex items-center gap-6 text-sm">
                 <li v-for="(item, index) in navMenu.nav" :key="index">
-                    <a v-bind:href="item.href" class="text-gray-500 transition hover:text-gray-500/75">
+                    <nuxt-link v-bind:to="item.href" class="transition hover:text-gray-500/75" :style="{'color': route.path === item.href ? '#00219a' : '#858585'}">
                         {{ item.label }}
-                    </a>
+                    </nuxt-link>
                 </li>
               </ul>
             </div>

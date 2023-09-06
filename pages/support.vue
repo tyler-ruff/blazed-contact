@@ -38,7 +38,11 @@
             console.log(data);
         });
         */
-       console.log("Todo: add contact form action");
+        const emailSent = await fetch("/api/test", {
+            method: "POST"
+        }).then((data) => {
+            console.log(data);
+        });
     };
 </script>
 <template>

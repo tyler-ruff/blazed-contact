@@ -4,7 +4,7 @@
     })
 </script>
 <template>
-    <div class="flow-root px-20 py-5">
+    <div class="max-w-3xl relative mx-auto py-5">
       <dl class="-my-3 divide-y divide-gray-100 text-sm">
         <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
           <dt class="font-medium text-gray-900">Title</dt>
