@@ -6,9 +6,15 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxt/content'
   ],
-  tailwindcss: {
-    plugins: [
-      '@tailwindcss/forms'
-    ]
+  css: ["~/assets/css/base.css"],
+  build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
   },
 };
