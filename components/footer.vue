@@ -131,25 +131,15 @@
             <p class="text-xs text-gray-500">
               &copy;<time v-bind:date-time="date">{{ year }}</time> {{ brandConfig.company }}. All rights reserved.
             </p>
-    
-            <ul
-              class="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end"
-            >
+            <ul class="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
               <li>
-                <a href="#" class="text-gray-500 transition hover:opacity-75">
-                  Terms & Conditions
+                <a href="https://blazed.statuspage.io/" target="_blank" class="text-gray-500 transition hover:opacity-75">
+                  System Status
                 </a>
               </li>
-    
               <li>
-                <a href="#" class="text-gray-500 transition hover:opacity-75">
+                <a href="https://blazedlabs.com/privacy" class="text-gray-500 transition hover:opacity-75">
                   Privacy Policy
-                </a>
-              </li>
-    
-              <li>
-                <a href="#" class="text-gray-500 transition hover:opacity-75">
-                  Cookies
                 </a>
               </li>
             </ul>

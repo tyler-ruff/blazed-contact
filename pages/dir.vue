@@ -1,10 +1,14 @@
 <script setup lang="ts">
-    useHead({
-        title: "Directory"
-    })
+  useHead({
+      title: "Directory"
+  });
+  /*
+    TODO: create "directory API" at blazed.company, call to it
+    to build directory dynamically
+  */
 </script>
 <template>
-    <div class="max-w-3xl relative mx-auto py-5">
+    <div class="max-w-3xl relative mx-auto py-5 px-5">
       <dl class="-my-3 divide-y divide-gray-100 text-sm">
         <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
           <dt class="font-medium text-gray-900">Title</dt>

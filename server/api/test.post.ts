@@ -1,1 +1,3 @@
-export default defineEventHandler(() => 'Test post handler')
+export default defineEventHandler(() => {
+
+})
