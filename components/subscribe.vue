@@ -10,6 +10,7 @@
             if (response) {
                 // Form data submitted successfully
                 //console.log('Form data submitted successfully');
+                window.location.href = "/welcome";
             } else {
                 // Handle errors if needed
                 //console.error('Failed to submit form data');
