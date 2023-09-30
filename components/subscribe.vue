@@ -6,8 +6,9 @@
             const response = await $fetch('/api/newsletter', {
                 method: 'POST',
                 body: { email: email.value }
+            }).then(() => {
+                window.location.href = "/welcome";
             });
-            window.location.href = "/welcome";
         } catch (error) {
             console.error('Error submitting form data:', error);
         }
