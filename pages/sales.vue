@@ -1,8 +1,27 @@
 <script setup lang="ts">
+    import { ref } from 'vue';
+
     useHead({
-        title: "Sales Inquiry"
+        title: "Sales Inquiry",
     })
+
+    const name = ref('');
+    const email = ref('');
+    const message = ref('');
+
+    const sendSalesMessage = async() => {
+      const emailSent = await $fetch("/api/test", {
+        method: "post",
+        body: {
+          fieldName: name.value,
+          email: email.value,
+          message: message.value
+        }
+      });
+      console.log(emailSent);
+    }
 </script>
+
 <template>
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-lg text-center">
@@ -16,29 +35,33 @@
         </p>
       </div>
     
-      <form action="" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+      <form @submit.prevent="sendSalesMessage" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
         <div>
-          <label for="name" class="sr-only">Name</label>
+          <label for="field-name" class="sr-only">Name</label>
     
           <div class="relative">
             <input
               required
               type="text"
+              id="field-name"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
               placeholder="Enter name"
+              v-model="name"
             />
           </div>
         </div>
 
         <div>
-          <label for="email" class="sr-only">Email</label>
+          <label for="field-email" class="sr-only">Email</label>
     
           <div class="relative">
             <input
               required
               type="email"
+              id="field-email"
               class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
               placeholder="Enter email"
+              v-model="email"
             />
     
             <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
@@ -63,8 +86,12 @@
         <div>
           <label for="message" class="sr-only">Message</label>
           <div class="relative">
-            <textarea id="message" required placeholder="Enter your message" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"></textarea>
+            <textarea id="message" v-model="message" required placeholder="Enter your message" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"></textarea>
           </div>
+        </div>
+
+        <div>
+          <recaptcha />
         </div>
     
         <div class="flex items-center justify-between">

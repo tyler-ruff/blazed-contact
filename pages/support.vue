@@ -38,7 +38,7 @@
             console.log(data);
         });
         */
-        const emailSent = await fetch("/api/test", {
+        const emailSent = await $fetch("/api/test", {
             method: "POST"
         }).then((data) => {
             console.log(data);

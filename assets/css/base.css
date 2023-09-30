@@ -29,3 +29,11 @@
     background: rgba(0, 0, 23, 0.8);
     color: rgba(255,255,255,0.7);
 }
+
+body{
+    overflow-x:hidden;
+}
+
+main{
+    min-height: 350px;
+}

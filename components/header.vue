@@ -5,7 +5,7 @@
     const route = useRoute();
     const navbar = reactive({
       burgerExpanded: false,
-      arr: ['foo', 'bar']
+      //arr: ['foo', 'bar']
     })
     const toggleBurger = async() => {
       if(navbar.burgerExpanded == true){

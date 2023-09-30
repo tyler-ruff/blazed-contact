@@ -1,18 +1,13 @@
 <script setup lang="ts">
     import { ref } from 'vue';
-    const formData = ref({
-        email: ''
-    });
+    const email = ref('');
     const submitForm = async() => {
         try {
-            const response = await fetch('/api/newsletter', {
+            const response = await $fetch('/api/newsletter', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData.value),
+                body: { email: email.value }
             });
-            if (response.ok) {
+            if (response) {
                 // Form data submitted successfully
                 //console.log('Form data submitted successfully');
             } else {
@@ -47,7 +42,7 @@
                     id="email-field"
                     placeholder="john@example.com"
                     name="email"
-                    v-model="formData.email"
+                    v-model="email"
                     class="w-full border-none focus:border-transparent focus:ring-transparent outline-none sm:text-sm"
                 />
                 <button type="submit" class="mt-1 w-full bg-blue-900 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-blue-700 active:bg-blue-600 sm:mt-0 sm:w-auto sm:shrink-0">
