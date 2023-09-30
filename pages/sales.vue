@@ -10,13 +10,15 @@
     const message = ref('');
 
     const sendSalesMessage = async() => {
-      const emailSent = await $fetch("/api/test", {
+      const emailSent = await $fetch("/api/contact/sales", {
         method: "post",
         body: {
           fieldName: name.value,
           email: email.value,
           message: message.value
         }
+      }).then(() => {
+        window.location.href = "/success";
       });
       console.log(emailSent);
     }

@@ -5,13 +5,9 @@ export default eventHandler(async (event) => {
     try {
         const parseBody = async () => {
             // Check Status
-            const email = body?.email;
-            if(validateEmail(email)){
-                console.log(email);
-            } else {
-                console.log("invalid email")
-            }
-            
+            //const email = body?.email;
+            const { fieldName, email, message } = body;
+
             // Prepare SendGrid API
             const apiKey = process.env.SENDGRID_API_KEY;
             if (!apiKey) {
@@ -21,15 +17,20 @@ export default eventHandler(async (event) => {
             sgMail.setApiKey(apiKey);
 
             // Prepare Email
-            const message = {
+            const emailMessage = {
                 to: 'hello@blazed.space',
                 from: 'noreply@blazed.space',
-                subject: 'Hello, world!',
-                text: 'This is a test email from my TypeScript application.',
+                subject: `New Sales Inquiry from ${fieldName}`,
+                text: `Sales Inquiry \n
+                    Name: ${fieldName} \n
+                    Email: ${email} \n
+                    -------------- \n
+                    ${message}
+                `,
             };
 
             // Send Email
-            sgMail.send(message).then(() => {
+            sgMail.send(emailMessage).then(() => {
                 // Here we log successful send requests
                 console.info(`Message send success`)
             }).catch((err) => {
