@@ -18,10 +18,6 @@ const navMenu = {
         {
             label: "Support",
             href: "/support"
-        },
-        {
-            label: "Connect",
-            href: "/connect"
         }
     ],
     cta: {

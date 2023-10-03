@@ -20,7 +20,6 @@
       }).then(() => {
         window.location.href = "/success";
       });
-      console.log(emailSent);
     }
 </script>
 

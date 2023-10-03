@@ -16,32 +16,18 @@
     const message = ref('');
 
     const sendSupportMessage = async() => {
-        /*
-        const emailSent = await fetch("/api/email", {
+        const emailSent = await $fetch("/api/contact/support", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-            subject: `New Support Ticket from: ${firstName.value}`,
-            emailBody: `Support Ticket: \n
-            Replyto: ${email.value} \n 
-            Name: ${firstName.value} ${lastName.value} \n
-            Company: ${company.value} \n
-            Phone: ${phoneNumber.value} \n
-            ---------------------------- \n
-            ${message.value}
-            `
-            }),
-            
-        }).then((data) => {
-            console.log(data);
-        });
-        */
-        const emailSent = await $fetch("/api/test", {
-            method: "POST"
-        }).then((data) => {
-            console.log(data);
+            body: {
+              firstName: firstName.value,
+              lastName: lastName.value,
+              company: company.value,
+              email: email.value,
+              phoneNumber: phoneNumber.value,
+              message: message.value
+            }
+        }).then(() => {
+            window.location.href = "/success";
         });
     };
 </script>
@@ -137,7 +123,11 @@
     
                 <div>
                   <label class="sr-only" for="phone">Phone</label>
-                  <phone-input v-model="phoneNumber" />
+                  <phone-input
+                     required 
+                     v-model="phoneNumber" 
+                     id="phone"
+                   />
                 </div>
               </div>
     
