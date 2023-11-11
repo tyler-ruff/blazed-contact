@@ -3,13 +3,16 @@ import { brandConfig } from '@/config/site';
 import { Emails, Telephones, Websites } from '@/utils/contact';
 
 const contactEmails = {
+    general: "info@blazed.company",
     main: brandConfig.email,
     sales: "sales@blazed.space",
     support: "support@blazed.space",
     systems: "hello@blazed.systems",
     telecom: "hello@blazed.tel",
     publishing: "hello@blazed.xyz",
-    pm: "hello@blazed.quest"
+    hr: "hr@blazed.work",
+    finance: "finance@blazed.company",
+    legal: "legal@blazed.company"
 } as Emails;
 
 const contactTelephones = {
